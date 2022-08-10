@@ -5,7 +5,6 @@ import com.bridgelabz.model.User;
 import com.bridgelabz.service.IGreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -34,6 +33,11 @@ public class GreetingController {
         user.setLastName(lastName);
         return greetingService.addGreeting(user);
     }
+    //    /**
+//     * @Func :Ability To Find By id
+//     * @URL: http://localhost:8080/path/2   for eg:"id=2"
+//     * @Return: Value at id 2
+//     */
     @GetMapping("/path/{id}")
     public Greeting getElementById(@PathVariable Long id){
         return greetingService.getGreetingById(id);
