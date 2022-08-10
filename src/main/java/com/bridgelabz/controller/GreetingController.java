@@ -22,7 +22,7 @@ public class GreetingController {
      // *     name=Arun in "params"-POSTMAN
      // *     lastname=Gawande
      // * }
-     //     * @URL: http://localhost:8080/home  -Postman-GET
+     //     * @URL: http://localhost:8081/home  -Postman-GET
      //     * @return: hello
      */
     @GetMapping(value={" ", "/" , "/home"})
@@ -54,12 +54,17 @@ public class GreetingController {
     //    /**
 //     * @Func :Ability To Edit Messages in Repository
 //     * @URL: http://localhost:8081/edit/2   for ed id:2
-//     * @Return: Edits position ID 2
+//     * @Return: Edits position Id 2
 //     */
     @PutMapping("/edit/{id}")
     public Greeting editGreetingById(@PathVariable long id, @RequestParam String name){
         return greetingService.editGreetingById(id, name);
     }
+    //    /**
+//     * @Func :Ability To Delete Messages in Repository
+//     * @URL: http://localhost:8081/delete/2   for ed id:2
+//     * @Return: Delete's position ID 2
+//     */
     @DeleteMapping("/delete/{id}")
     public List<Greeting> deleteGreetingById(@PathVariable Long id){
         return greetingService.deleteGreetingById(id);
