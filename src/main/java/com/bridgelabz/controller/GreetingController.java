@@ -22,7 +22,7 @@ public class GreetingController {
      // *     name=Arun in "params"-POSTMAN
      // *     lastname=Gawande
      // * }
-     //     * @URL: http://localhost:8080/home  -Postman-GET
+     //     * @URL: http://localhost:8081/home  -Postman-GET
      //     * @return: hello
      */
     @GetMapping(value={" ", "/" , "/home"})
@@ -35,13 +35,18 @@ public class GreetingController {
     }
     //    /**
 //     * @Func :Ability To Find By id
-//     * @URL: http://localhost:8080/path/2   for eg:"id=2"
+//     * @URL: http://localhost:8081/path/2   for eg:"id=2"
 //     * @Return: Value at id 2
 //     */
     @GetMapping("/path/{id}")
     public Greeting getElementById(@PathVariable Long id){
         return greetingService.getGreetingById(id);
     }
+    //    /**
+//     * @Func :Ability To List All messages
+//     * @URL: http://localhost:8081/all
+//     * @Return: All elements in repository
+//     **/
     @GetMapping("/all")
     public List<Greeting> getAll(){
         return greetingService.getAll();
